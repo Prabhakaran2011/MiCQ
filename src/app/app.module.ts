@@ -5,10 +5,13 @@ import { AppComponent } from './app.component';
 
 // pages
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TrendComponent } from './components/trend/trend.component';
+import { ChanneldetailComponent } from './components/channeldetail/channeldetail.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 // routing
 import { AppRoutingModule } from './shared/app-routing.module';
+import { RouterLinkActive, RouterModule } from '@angular/router';
 
 // services
 import { HttpModule } from '@angular/http';
@@ -17,12 +20,15 @@ import { HttpModule } from '@angular/http';
   declarations: [
     AppComponent,
     DashboardComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    TrendComponent,
+    ChanneldetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpModule
+    HttpModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
