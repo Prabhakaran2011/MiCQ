@@ -9,15 +9,14 @@ import { ServiceService } from '../../shared/service/service.service';
   providers: [ServiceService]
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private _http: ServiceService, private router:Router) { }
-
-  private api_key:string = "AIzaSyClYrtbjAV4VrIJ20O-Hd_0Kzpo4IYqxhs";
+  private api_key:string = 'AIzaSyClYrtbjAV4VrIJ20O-Hd_0Kzpo4IYqxhs';
   channelList = [];
   channelDetails = [];
-  channelListString:string = "";
+  channelListString: string;
   channelDetail = {};
 
+  constructor(private _http: ServiceService, private router:Router) { }
+  
   getChannels(){
     this._http.getData('../../../assets/channels.json').subscribe(data => this.getChannelDetails(data));
   };
@@ -32,25 +31,23 @@ export class DashboardComponent implements OnInit {
         channelUrl = channelUrl + "&id=" +eachObj.id;
       }
       this._http.getData(channelUrl).subscribe(detail => this.bindChannelinView(detail,eachObj.category)); 
-    });
+    })
   };
 
   bindChannelinView(channelInfo,category){
-    //channel details
-    var userid = channelInfo.items[0].id;
-    var channeltitle = channelInfo.items[0].snippet.title;
-    var channeldescription = channelInfo.items[0].snippet.description;
-    var channelart = channelInfo.items[0].brandingSettings.image.bannerTvImageUrl;
-    var channelthumbnail = channelInfo.items[0].snippet.thumbnails.medium.url; // default, medium or high
-    
-    var channelArtSource = "";
-    
+    // channel details
+    let userid = channelInfo.items[0].id;
+    let channeltitle = channelInfo.items[0].snippet.title;
+    let channeldescription = channelInfo.items[0].snippet.description;
+    let channelart = channelInfo.items[0].brandingSettings.image.bannerTvImageUrl;
+    let channelthumbnail = channelInfo.items[0].snippet.thumbnails.medium.url; // default, medium or high
+    let channelArtSource = "";
+
     if(channelart != undefined) {
         channelArtSource = channelart
-    } else {
+      } else {
         channelArtSource = '../imgs/noMedia.jpg'
-    }
-
+      }
     this.channelDetail = {
       category : category,
       userid : userid,
@@ -58,14 +55,12 @@ export class DashboardComponent implements OnInit {
       title : channeltitle,
       banner : channelArtSource 
     };
-
     this.channelDetails.push(this.channelDetail);
   };
 
   redirect(userId){
     this.router.navigate(['./youTube/user/'+ userId]);    
   };
-
   ngOnInit() {
     this.getChannels();
   }

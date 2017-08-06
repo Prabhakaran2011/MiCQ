@@ -7,11 +7,10 @@ export class ServiceService {
 
   constructor( private _http: Http ) { }
 
-  getData(url:string) {
+  getData(url: string) {
     return this._http.get(url)
       .map(data => {
         return data.json();
       });
-  }
-  
+  }  
 }

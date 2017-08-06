@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  showModal = false;
+
+  showAddChannelPopup(){
+    this.showModal = true;
+  }
+
+  closeAddchannelPopup(){
+    this.showModal = false;
+  }
 }

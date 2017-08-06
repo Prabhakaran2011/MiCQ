@@ -21,7 +21,7 @@
             <li routerLink="/trendingVideos" routerLinkActive="active"><a>Trending</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a>Add Channel</a></li>
+            <li class="active" (click)='showAddChannelPopup()'><a>Add Channel</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -33,3 +33,42 @@
 </div>
 
 <div class="footer">&copy; My channel Quest - 2017</div>
+
+
+<div class="modal-backdrop fade in" [style.display]="showModal ? 'block' : 'none'"></div>
+  <div class="modal" tabindex="-1" role="dialog" style="display: block" [style.display]="showModal ? 'block' : 'none'">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" (click)='closeAddchannelPopup()'>
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Add Channel
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+              <form role="form">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Channel Name</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Channel Name"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">User Id</label>
+                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter User Id"/>
+                  </div>
+              </form>              
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)='closeAddchannelPopup()'>Close</button>
+                <button type="button" class="btn btn-info">Add</button>
+            </div>
+        </div>
+    </div>
+  </div>
