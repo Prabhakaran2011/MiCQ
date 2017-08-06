@@ -1,2 +1,17 @@
 <div class="banner">Search Your Favourite channel</div>
-<div class="container channelList" class="row"><div id="channelList" [innerHtml]="channelListString"></div></div>
+<div class="container channelList" class="row">
+    <div class='col-6 col-sm-4 col-md-3 col-lg-3 thumbnails' style='height:240px;' *ngFor="let channel of channelDetails">
+        <div (click)='redirect(channel.userid)' class='cord'>
+            <a data-id={{channel.userid}}>
+            <img src={{channel.thumbnail}} class='channelThumbnail channelLogo' alt={{channel.title}} title={{channel.title}} /></a>
+            <div class="container">
+                <h4 class='truncate'>
+                    <a target='_blank'>
+                        {{channel.title | slice:0:15 }}{{ channel.title.length > 15 ? '...' : ''}}
+                    </a>
+                </h4>
+                {{channel.category}}
+            </div>
+        </div>
+    </div>
+</div>

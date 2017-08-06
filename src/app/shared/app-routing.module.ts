@@ -10,6 +10,7 @@ import { PagenotfoundComponent } from '../components/pagenotfound/pagenotfound.c
 const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'trendingVideos', component: TrendComponent },
+  { path: 'youTube/user/:userId', component: ChanneldetailComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full'  },
   { path: '**', component: PagenotfoundComponent }
 ];

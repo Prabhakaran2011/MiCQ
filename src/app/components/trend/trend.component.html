@@ -1,3 +1,24 @@
-<p>
-  trend works!
-</p>
+<div class="container">
+  <div class="videoList row">
+    <div class='col-md-4 col-sm-6 col-lg-3 thumbnails' style='height:auto;min-height: 300px' *ngFor="let videoLists of videoLists">
+      <div class='card'>
+        <a href={{videoLists.url}} target='_blank'>
+          <img src={{videoLists.videothumbnail}} class='videoThumbnail thumbnailImage' style="width: 100%;border-bottom: #767676 1px solid;" alt={{videoLists.videotitle}} title={{videoLists.videotitle}} />
+        </a>
+        <div style='padding-left:5px; padding-right:5px' class="content">
+          <div style="height:25px">
+            <h4 class='truncate' style="font-size: 15px;">
+              <a href={{videoLists.url}} target='_blank'>{{videoLists.videotitle}}</a>
+            </h4>
+          </div>
+          <hr style="margin-bottom: 10px!important"/>
+          <div class="" style="margin-bottom: 4px"> 
+            {{videoLists.publishedBy}}
+            <br/> 
+            Published on : {{videoLists.videodate}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

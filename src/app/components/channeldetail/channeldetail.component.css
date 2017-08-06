@@ -1,0 +1,49 @@
+.channelThumbnail {
+    position: relative;
+    top: -40px;
+    left: 20px;
+}
+
+.channelThumbnail img {
+    border-radius : 75px;
+}
+
+.aboutchannel{
+   position: relative;
+   left: 20px; 
+   top: -40px;
+}
+
+.thumbnails{
+    padding: 3px;
+    font-size: 100%;
+    color: #767676;
+    line-height: 1.3em;
+    position: relative;
+    word-wrap: break-word; 
+}
+
+.card {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 4px;
+
+    width: 98%;
+    margin: 3px;
+    background-color: #fff;
+        
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.content{
+    overflow: hidden;
+    position: relative;
+}

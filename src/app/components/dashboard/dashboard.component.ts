@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   channelList = [];
   channelDetails = [];
   channelListString:string = "";
+  channelDetail = {};
 
   getChannels(){
     this._http.getData('../../../assets/channels.json').subscribe(data => this.getChannelDetails(data));
@@ -45,23 +46,24 @@ export class DashboardComponent implements OnInit {
     var channelArtSource = "";
     
     if(channelart != undefined) {
-        channelArtSource = "<img src='" + channelart + "' class='videoThumbnail thumbnailImage' alt='" + channeltitle + "' title='" + channeltitle + "' style='height:220px!important'/>"
+        channelArtSource = channelart
     } else {
-        channelArtSource = "<img src='../imgs/noMedia.jpg' class='videoThumbnail thumbnailImage' alt='" + channeltitle + "' title='" + channeltitle + "' style='height:220px!important'/>"
+        channelArtSource = '../imgs/noMedia.jpg'
     }
-    
-    this.channelListString += "<div (click)=\"redirect();\" class='col-md-4 col-sm-6 col-lg-3' style='height:300px;'><div class='col-md-12 card'>"
-        + "<a data-id="+userid+">"
-        + channelArtSource
-        + "<img src='" + channelthumbnail + "' class='channelThumbnail channelLogo' alt='" + channeltitle + "' title='" + channeltitle + "' /></a>"
-        + "<div style='padding-left:5px; padding-right:5px'>"
-            + "<h2 class='truncate'><a href='https://www.youtube.com/channel/" + userid + "' target='_blank'>" + channeltitle + "</a></h2>" + category + ""
-        + "</div></div></div>";
+
+    this.channelDetail = {
+      category : category,
+      userid : userid,
+      thumbnail : channelthumbnail,
+      title : channeltitle,
+      banner : channelArtSource 
+    };
+
+    this.channelDetails.push(this.channelDetail);
   };
 
-  redirect(){
-    debugger;
-    this.router.navigate(['./pagenotfound']);    
+  redirect(userId){
+    this.router.navigate(['./youTube/user/'+ userId]);    
   };
 
   ngOnInit() {

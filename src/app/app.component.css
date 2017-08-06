@@ -1,6 +1,10 @@
 .header{
     background: white;
-    height: 40px;
+    height: 50px;
+}
+
+body a:hover {
+    text-decoration: none!important;
 }
 
 /*NavBar*/
@@ -26,8 +30,9 @@
     color: #000;
 }
 
-.navbar-default .navbar-nav .active {
-    background-color: #f2f2f2;
+.navbar-default ul.nav.navbar-nav li.active a{
+    background: #fc3!important;
+    background: linear-gradient(135deg, #fc3 20%, #ffb347 80%)!important;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -44,20 +49,12 @@
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #000;
-    background-color: #f0f0f0;
+    background: #fc3!important;
+    background: linear-gradient(135deg, #fc3 20%, #ffb347 80%)!important;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     background-color: #fff;
-}
-
-
-.fontawesome-header-icons {
-    font-size: 25px;
-}
-
-.fontawesome-header-icons > li {
-    margin: 4px;
 }
 
 /*NavBar*/

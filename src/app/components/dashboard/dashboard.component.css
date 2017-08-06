@@ -6,41 +6,55 @@
     line-height: 50vh
 }
 
-.card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.card.col-md-4, .card.col-sm-6, .card.col-lg-3 {
-    padding : 0px !important;
-}
-.card.col-md-12 {
-    margin: 5px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.truncate {
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
 #siteBanner{
     height: 300px;
     background: #ee6e73;
 }
 
-.channelLogo {
-    float: right !important;
-    margin-right: 20px !important;
-    width: 100px !important;
-    border-radius: 30px !important;
+.thumbnails{
+    padding: 3px;
+    font-size: 94%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cord {
+    width: 98%;
+    margin: 3px;
+    background-color: #fff;
+        
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.cord:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cord:hover a img{
+   zoom: 103%;
+   transition: 0.3s;
+}
+
+.cord a img {
+    width:150px;
+    border-radius : 75px;
+}
+
+.container {
+    background: #276cda;
+    width: 100%;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.container a, .container a:hover {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.cord:hover .container {
+    background: rgba(255,204,51, 1);
+    zoom: 103%;
 }
